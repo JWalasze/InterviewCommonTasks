@@ -18,6 +18,8 @@ public class ExtensionsForStringTests
 
     [Theory]
     [InlineData("Did Hannah see bees? Hannah did.", true)]
+    [InlineData("That's not palindrome", false)]
+    [InlineData("Ha...aH", true)]
     public void IsPalindrome_ReturnsTrueOrFalse(string input, bool result)
     {
         //Arrange //Act
@@ -60,12 +62,12 @@ public class ExtensionsForStringTests
         reveredOrder.Should().Be(result);
     }
 
-    [Theory]
-    [InlineData("Did Hannah see bees? Hannah did.")]
-    public void OccurrenceOfLetters_ReturnsDictionaryContainingOccurrenceOfEveryLetter(string input)
+    [Fact]
+    public void OccurrenceOfLetters_ReturnsDictionaryContainingOccurrenceOfEveryLetter()
     {
         //Arrange
-        var resultDictionary = new Dictionary<char, int>()
+        const string input = "Did Hannah see bees? Hannah did.";
+        var resultDictionary = new Dictionary<char, int>
         {
             {'H', 2},
             {'a', 4},
@@ -86,6 +88,17 @@ public class ExtensionsForStringTests
         var reveredOrder = input.OccurrenceOfLetters();
 
         //Assert
-        reveredOrder.Should().Equal(resultDictionary);
+        reveredOrder.Should().BeEquivalentTo(resultDictionary);
+    }
+
+    [Theory]
+    [InlineData("abc", new[] {"a", "b", "c", "ab", "bc", "abc"})]
+    public void FindAllPossibleWords_ShouldReturnListOfSubstrings(string sentence, string[] output)
+    {
+        //Arrange //Act
+        var result = sentence.FindAllPossibleWords();
+
+        //Assert
+        result.Should().BeEquivalentTo(output);
     }
 }

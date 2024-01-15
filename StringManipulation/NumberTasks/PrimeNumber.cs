@@ -8,12 +8,12 @@ public static class PrimeNumber
         return IsPrimeRecursive(number, 2);
     }
 
-    //Check in more optimized way
+    //More optimized way to check if the number is prime
     public static bool IsPrimeOptimized(int number)
     {
         if (number <= 1) return false;
 
-        if (number == 2 || number == 3) return true;
+        if (number is 2 or 3) return true;
 
         if (number % 2 == 0 || number % 3 == 0) return false;
 

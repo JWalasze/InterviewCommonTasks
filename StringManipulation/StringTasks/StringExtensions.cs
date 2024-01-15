@@ -88,7 +88,7 @@ public static class StringExtensions
         return outputDictionary;
     }
 
-    //Remove duplicated letters from the given string
+    //Remove duplicated letters/signs from the given string
     public static string RemoveDuplicateCharacters(this string inputStr)
     {
         var outputStr = string.Empty;
