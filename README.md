@@ -1,4 +1,4 @@
-Common programming tasks written in C# with unit tests.
+**Common programming tasks written in C# with unit tests.**
 
 The repository contains 2 projects in a solution (Console App Project and XUnit Project).
 
