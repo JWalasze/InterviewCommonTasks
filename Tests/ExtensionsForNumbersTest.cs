@@ -40,7 +40,7 @@ public class ExtensionsForNumbersTests
     [InlineData(234, 9)]
     [InlineData(1, 1)]
     [InlineData(0, 0)]
-    [InlineData(-222, 8)]
+    [InlineData(-2222, 8)]
     public void SumOfDigits_ShouldReturnSumOfDigits(int number, int sumOfDigits)
     {
         //Arrange //Act

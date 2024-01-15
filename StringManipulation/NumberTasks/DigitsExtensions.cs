@@ -5,7 +5,7 @@ public static class DigitsExtensions
     //Count sum of digits in the given number
     public static int SumOfDigits(this int number)
     {
-        return SumOfDigits(number, 0);
+        return SumOfDigits(Math.Abs(number), 0);
     }
 
     //Find second largest int in a list
